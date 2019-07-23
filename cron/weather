@@ -1,0 +1,15 @@
+SHELL=/bin/sh
+
+# Project
+YII=/www/Weather
+
+## Ручные билеты
+18      19      *       *       1-5     root            ${YII}/insert_weather.php > /dev/null 2>&1
+
+
+
+
+
+
+
+

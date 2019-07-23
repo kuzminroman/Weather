@@ -2,20 +2,13 @@
 use yii\grid\GridView;
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
+?>
 
 $this->title = 'Weather';
 $this->params['breadcrumbs'][] = $this->title;
 
-foreach($show as $s):
-    $arrayDate = json_decode($s['date']);
-    $arrayDegrees = json_decode($s['degrees']);
-    $arrayDescription = json_decode($s['description']);
-    $arrayPressure = json_decode($s['pressure']);
-    $arrayHumidity = json_decode($s['humidity']);
-    $arrayWind = json_decode($s['wind']);
-    $arrayTypeWind = json_decode($s['type_wind']);
-    $arrayExtra = json_decode($s['extra']);
-?>
+
+
     <table class="table table-sm">
         <thead>
         <tr>
@@ -81,7 +74,8 @@ foreach($show as $s):
             <td><?=$arrayWind[0][3]?></td>
             <td><?=$arrayTypeWind[0][3]?></td>
             <td><?=$arrayExtra[0][3]?></td>
-        <tr>
+        </tr>
+
 
         <tr>
             <th scope="row"></th>
@@ -94,81 +88,33 @@ foreach($show as $s):
             <td><?=$arrayWind[1][0]?></td>
             <td><?=$arrayTypeWind[1][0]?></td>
             <td><?=$arrayExtra[1][0]?></td>
-        <tr>
+        <tr/>
 
         <tr>
             <th scope="row"></th>
-            <td><?=$arrayDate[0][0]?></td>
-            <td><?=$arrayDegrees[0][1]?></td>
-            <td><?=$arrayDescription[0][1]?></td>
-            <td><?=$arrayPressure[0][1]?></td>
-            <td><?=$arrayHumidity[0][1]?></td>
-            <td><?=$arrayWind[0][1]?></td>
-            <td><?=$arrayTypeWind[0][1]?></td>
-            <td><?=$arrayExtra[0][1]?></td>
-        <tr>
+            <td><?=$arrayDate[1][1]?></td>
+            <td><?=$arrayDegrees[1][1]?></td>
+            <td><?=$arrayDescription[1][1]?></td>
+            <td><?=$arrayPressure[1][1]?></td>
+            <td><?=$arrayHumidity[1][1]?></td>
+            <td><?=$arrayWind[1][1]?></td>
+            <td><?=$arrayTypeWind[1][1]?></td>
+            <td><?=$arrayExtra[1][1]?></td>
+        <tr/>
 
         <tr>
             <th scope="row"></th>
-            <td><?=$arrayDate[0][0]?></td>
-            <td><?=$arrayDegrees[0][1]?></td>
-            <td><?=$arrayDescription[0][1]?></td>
-            <td><?=$arrayPressure[0][1]?></td>
-            <td><?=$arrayHumidity[0][1]?></td>
-            <td><?=$arrayWind[0][1]?></td>
-            <td><?=$arrayTypeWind[0][1]?></td>
-            <td><?=$arrayExtra[0][1]?></td>
-        <tr>
+            <td><?=$arrayDate[1][2]?></td>
+            <td><?=$arrayDegrees[1][2]?></td>
+            <td><?=$arrayDescription[1][2]?></td>
+            <td><?=$arrayPressure[1][2]?></td>
+            <td><?=$arrayHumidity[1][2]?></td>
+            <td><?=$arrayWind[1][2]?></td>
+            <td><?=$arrayTypeWind[1][2]?></td>
+            <td><?=$arrayExtra[1][2]?></td>
+        <tr/>
 
-        <tr>
-            <th scope="row"></th>
-            <td><?=$arrayDate[0][0]?></td>
-            <td><?=$arrayDegrees[0][1]?></td>
-            <td><?=$arrayDescription[0][1]?></td>
-            <td><?=$arrayPressure[0][1]?></td>
-            <td><?=$arrayHumidity[0][1]?></td>
-            <td><?=$arrayWind[0][1]?></td>
-            <td><?=$arrayTypeWind[0][1]?></td>
-            <td><?=$arrayExtra[0][1]?></td>
-        <tr>
 
-        <tr>
-            <th scope="row"></th>
-            <td><?=$arrayDate[0][0]?></td>
-            <td><?=$arrayDegrees[0][1]?></td>
-            <td><?=$arrayDescription[0][1]?></td>
-            <td><?=$arrayPressure[0][1]?></td>
-            <td><?=$arrayHumidity[0][1]?></td>
-            <td><?=$arrayWind[0][1]?></td>
-            <td><?=$arrayTypeWind[0][1]?></td>
-            <td><?=$arrayExtra[0][1]?></td>
-        <tr>
-
-        <tr>
-            <th scope="row"></th>
-            <td><?=$arrayDate[0][0]?></td>
-            <td><?=$arrayDegrees[0][1]?></td>
-            <td><?=$arrayDescription[0][1]?></td>
-            <td><?=$arrayPressure[0][1]?></td>
-            <td><?=$arrayHumidity[0][1]?></td>
-            <td><?=$arrayWind[0][1]?></td>
-            <td><?=$arrayTypeWind[0][1]?></td>
-            <td><?=$arrayExtra[0][1]?></td>
-        <tr>
-
-        <tr>
-            <th scope="row"></th>
-            <td><?=$arrayDate[0][0]?></td>
-            <td><?=$arrayDegrees[0][1]?></td>
-            <td><?=$arrayDescription[0][1]?></td>
-            <td><?=$arrayPressure[0][1]?></td>
-            <td><?=$arrayHumidity[0][1]?></td>
-            <td><?=$arrayWind[0][1]?></td>
-            <td><?=$arrayTypeWind[0][1]?></td>
-            <td><?=$arrayExtra[0][1]?></td>
-        <tr>
 
         </tbody>
     </table>
-
-<?php endforeach; ?>

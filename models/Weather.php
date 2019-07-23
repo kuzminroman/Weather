@@ -90,4 +90,29 @@ class Weather extends \yii\db\ActiveRecord
             exit;
         }
     }
+
+    public function tamplateWeather($i, $j)
+    {
+        $show = $this->showWeather();
+        foreach($show as $s):
+            $arrayDate = json_decode($s['date']);
+            $arrayDegrees = json_decode($s['degrees']);
+            $arrayDescription = json_decode($s['description']);
+            $arrayPressure = json_decode($s['pressure']);
+            $arrayHumidity = json_decode($s['humidity']);
+            $arrayWind = json_decode($s['wind']);
+            $arrayTypeWind = json_decode($s['type_wind']);
+            $arrayExtra = json_decode($s['extra']);
+
+        $tamplate = <<<HTML
+            <td><?=$arrayDegrees[$i][$j]?></td>
+            <td><?=$arrayDescription[$i][0]?></td>
+            <td><?=$arrayPressure[$i][0]?></td>
+            <td><?=$arrayHumidity[0][0]?></td>
+            <td><?=$arrayWind[0][0]?></td>
+            <td><?=$arrayTypeWind[0][0]?></td>
+            <td><?=$arrayExtra[0][0]?></td>
+HTML;
+        endforeach;
+    }
 }
