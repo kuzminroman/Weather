@@ -81,7 +81,7 @@ foreach($show as $s):
             <td><?=$arrayWind[0][3]?></td>
             <td><?=$arrayTypeWind[0][3]?></td>
             <td><?=$arrayExtra[0][3]?></td>
-        <tr>
+        </tr>
 
         <tr>
             <th scope="row"></th>
