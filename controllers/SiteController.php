@@ -138,6 +138,7 @@ class SiteController extends Controller
     public function actionWeather()
     {
         $weather = new Weather();
+        $weather->executeInsertWeather();
         $show = $weather->showWeather();
 
         return $this->render('weather', ['show' => $show]);

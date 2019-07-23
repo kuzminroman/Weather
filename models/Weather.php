@@ -67,6 +67,21 @@ class Weather extends \yii\db\ActiveRecord
         return $weather;
     }
 
+    private function showDateNow()
+    {
+        $dateNow = date('Y-m-d');
+        $date = "";
+        $dateRegist = Weather::find()
+            ->select(['date_regist'])
+            ->where(['date_regist' => $dateNow])
+            ->all();
+        foreach ($dateRegist as $d)
+        {
+            $date = $d['date_regist'];
+        }
+        return $date;
+    }
+
     private function insertWeather()
     {
         $weatherElement = new ParsingWeather();
@@ -91,6 +106,23 @@ class Weather extends \yii\db\ActiveRecord
         }
     }
 
+    public function executeInsertWeather()
+    {
+        $dateRegist = $this->showDateNow();
+        $dateNow = date('Y-m-d');
+
+        if($dateNow != $dateRegist)
+        {
+            return $this->insertWeather();
+        }
+
+        return false;
+    }
+
+    /***
+     * @param $i
+     * @param $j
+     */
     public function tamplateWeather($i, $j)
     {
         $show = $this->showWeather();
