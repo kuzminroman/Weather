@@ -139,6 +139,7 @@ class SiteController extends Controller
     {
         $weather = new Weather();
         $show = $weather->showWeather();
+
         return $this->render('weather', ['show' => $show]);
     }
 }
