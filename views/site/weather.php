@@ -37,7 +37,7 @@ foreach($show as $s):
         <tr>
             <th scope="row"></th>
             <td>
-                <b><?=$arrayDate[0]?></b>
+                <b>Сегодня</b>
                 <p>Утром</p>
             </td>
             <td><?=$arrayDegrees[0][0]?></td>

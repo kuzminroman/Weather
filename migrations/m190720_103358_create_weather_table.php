@@ -12,6 +12,7 @@ class m190720_103358_create_weather_table extends Migration
      */
     public function safeUp()
     {
+        $options = 'ALTER TABLE weather CONVERT TO CHARACTER SET utf8';
         $this->createTable('{{%weather}}', [
             'id' => $this->primaryKey(),
             'date' => $this->text(),

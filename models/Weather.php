@@ -58,6 +58,9 @@ class Weather extends \yii\db\ActiveRecord
             ];
     }
 
+    /***
+     * @return array|\yii\db\ActiveRecord[]
+     */
     public function showWeather()
     {
         $dateNow = date('Y-m-d');
@@ -67,6 +70,9 @@ class Weather extends \yii\db\ActiveRecord
         return $weather;
     }
 
+    /***
+     * @return mixed|string
+     */
     private function showDateNow()
     {
         $dateNow = date('Y-m-d');
@@ -82,6 +88,9 @@ class Weather extends \yii\db\ActiveRecord
         return $date;
     }
 
+    /***
+     * @return bool
+     */
     private function insertWeather()
     {
         $weatherElement = new ParsingWeather();
@@ -106,6 +115,9 @@ class Weather extends \yii\db\ActiveRecord
         }
     }
 
+    /***
+     * @return bool
+     */
     public function executeInsertWeather()
     {
         $dateRegist = $this->showDateNow();
@@ -136,15 +148,6 @@ class Weather extends \yii\db\ActiveRecord
             $arrayTypeWind = json_decode($s['type_wind']);
             $arrayExtra = json_decode($s['extra']);
 
-        $tamplate = <<<HTML
-            <td><?=$arrayDegrees[$i][$j]?></td>
-            <td><?=$arrayDescription[$i][0]?></td>
-            <td><?=$arrayPressure[$i][0]?></td>
-            <td><?=$arrayHumidity[0][0]?></td>
-            <td><?=$arrayWind[0][0]?></td>
-            <td><?=$arrayTypeWind[0][0]?></td>
-            <td><?=$arrayExtra[0][0]?></td>
-HTML;
         endforeach;
     }
 }
